@@ -3,7 +3,7 @@ import { YOUTUBE_API_URL } from "../../utils/constants";
 import axios from "axios";
 import { RootState } from "..";
 
-const API_KEY = process.env.REACT_APP_YOTUBE_DATA_API_KEY;
+const API_KEY = import.meta.env.VITE_YOTUBE_DATA_API_KEY;
 
 export const getHomePageVideos = createAsyncThunk(
     "youtubeApp/home/PageVideos",
