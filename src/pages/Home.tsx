@@ -4,14 +4,19 @@ import Sidebar from "../components/Sidebar";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { getHomePageVideos } from "../store/reducers/getHomePageVideos";
 
+
+
 function Home() {
+
+
     const dispatch = useAppDispatch();
     const videos = useAppSelector((state)=>state.youtubeApp.videos)
 
     useEffect(()=>{
         dispatch(getHomePageVideos(false));
+        console.log(videos);
+        
     },[dispatch])
-
 
     return (
         <div className="max-h-screen overflow-hidden">
