@@ -35,6 +35,7 @@ function Home() {
             </div>
                 <div className="flex" style={{height: "92.5vh"}}>
                     <Sidebar />
+                    <div className="w-full">
                     {videos.length ? (
                     <InfiniteScroll 
                         dataLength={videos.length}
@@ -49,6 +50,7 @@ function Home() {
                             })}
                         </div>
                     </InfiniteScroll>):(<Spinner />)}
+                    </div>
                 </div>
             </div>
     )

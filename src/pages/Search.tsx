@@ -42,7 +42,7 @@ function Search() {
                             next={() => dispatch(getSearchPageVideos(true))}
                             hasMore={videos.length < 500}
                             loader={<Spinner />}
-                            height={600}
+                            height={`100vh`}
                         >
                             <div className="my-5">
                                 {videos.map((item: HomePageVideos) => {
