@@ -2,7 +2,7 @@ import { HomePageVideos } from "../Types";
 import { Link } from "react-router-dom";
 
 export default function Card({data}:{data: HomePageVideos}){
-    const isData = data ? true : false;
+    // const isData = data ? true : false;
     return <div className="w-auto h-60 flex gap-3 flex-col">
             <div className="relative">
                 <span className="absolute bottom-3 cursor-pointer right-3 text-sm bg-gray-900 px-2 py-0.5 z-10">{data.videoDuration}</span>
