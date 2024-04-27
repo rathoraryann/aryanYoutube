@@ -11,44 +11,46 @@ import { HiScissors } from "react-icons/hi";
 import { FaShare } from "react-icons/fa";
 import { BiDislike, BiLike } from "react-icons/bi";
 
-function Watch () {
-    const [showMoreStatus, setShowMoreStatus] = useState<boolean>(false);
-    const {id} = useParams();
-    const dispatch = useAppDispatch();
-    const navigate = useNavigate();
-    const currentPlaying = useAppSelector((state)=>state.youtubeApp.currentPlaying);
-    const recommendedVideos = useAppSelector((state)=>state.youtubeApp.recommendedVideos);
-    useEffect(()=>{
-        if(id){
-            dispatch(getVideoDetails(id))
-            setShowMoreStatus(false)
-        }else{
-            navigate("/")
-        }
-    },[id, navigate, dispatch]);
+function Watch() {
+  const [showMoreStatus, setShowMoreStatus] = useState<boolean>(false);
+  const { id } = useParams();
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const currentPlaying = useAppSelector((state) => state.youtubeApp.currentPlaying);
+  const recommendedVideos = useAppSelector((state) => state.youtubeApp.recommendedVideos);
+  useEffect(() => {
+    if (id) {
+      dispatch(getVideoDetails(id))
+      setShowMoreStatus(false)
+    } else {
+      navigate("/")
+    }
+  }, [id, navigate, dispatch]);
 
-    useEffect(()=>{
-        if(currentPlaying && id) dispatch(getRecommendedVideos(id));
-    }, [currentPlaying, dispatch, id])
-    return(
-        <>
-        {currentPlaying && currentPlaying?.videoId === id && (
+  useEffect(() => {
+    if (currentPlaying && id) dispatch(getRecommendedVideos(id));
+  }, [currentPlaying, dispatch, id])
+  return (
+    <>
+      {currentPlaying && currentPlaying?.videoId === id && (
         <div className="max-h-screen overflow-hidden">
           <div style={{ height: "7.5vh" }}>
             <Navbar />
           </div>
-                <div className="flex w-full" style={{height: "92.5vh"}}>
-                    <div className="flex gap-y-10 gap-x-10 p-7 mx-20 mr-0 w-full overflow-auto">
-                        <div style={{maxWidth: "800px"}}>
-                            <div>
-                                <iframe src={`https://www.youtube.com/embed/${id}?autoplay=1`} 
-                                frameBorder="0" 
-                                width="800"
-                                height="502"
-                                allowFullScreen
-                                title="Youtube video player"
-                                ></iframe>
-                            <div className="mt-5">
+          <div className="flex w-full" style={{ height: "92.5vh" }}>
+            <div className="flex flex-col md:flex-row md:p-7 md:mx-20 w-full md:overflow-auto overflow-x-hidden">
+              <div style={{ maxWidth: "800px" }}>
+                <div>
+                  <div className="w-full">
+                  <iframe src={`https://www.youtube.com/embed/${id}?autoplay=1`}
+                    frameBorder="0"
+                    // width="800"
+                    height="502"
+                    allowFullScreen
+                    title="Youtube video player"
+                  ></iframe>
+                  </div>
+                  <div className="mt-5">
                     <p className="text-xl">{currentPlaying.videoTitle}</p>
                     <div className="flex justify-between mt-1">
                       <div className="text-sm text-gray-400">
@@ -107,9 +109,8 @@ function Watch () {
                         </div>
                       </div>
                       <div
-                        className={`${
-                          !showMoreStatus ? "max-h-16 overflow-hidden" : ""
-                        } text-sm w-11/12`}
+                        className={`${!showMoreStatus ? "max-h-16 overflow-hidden" : ""
+                          } text-sm w-11/12`}
                       >
                         <pre
                           style={{
@@ -132,7 +133,7 @@ function Watch () {
                   </div>
                 </div>
               </div>
-              <div className="mr-24 flex flex-col gap-3">
+              <div className="md:mr-24 flex flex-col gap-3 w-full">
                 {getRecommendedVideos.length &&
                   recommendedVideos.map((item) => {
                     return <WatchCard data={item} key={item.videoId} />;

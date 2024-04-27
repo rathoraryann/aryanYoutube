@@ -36,7 +36,7 @@ function Search() {
             <div className="flex" style={{ height: "92.5vh" }}>
                 <Sidebar />
                 {videos.length ? (
-                    <div className="py-8 pl-8 flex flex-col gap-5 w-full">
+                    <div className="flex flex-col gap-5 w-full">
                         <InfiniteScroll
                             dataLength={videos.length}
                             next={() => dispatch(getSearchPageVideos(true))}

@@ -44,7 +44,7 @@ function Home() {
                         loader={<Spinner/>}
                         height={`100vh`}
                     >
-                        <div className="grid gap-y-14 gap-x-8 grid-cols-4 p-8">
+                        <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
                             {videos.map((item:HomePageVideos)=>{
                                 return <Card data={item} key={item.videoId}/>
                             })}

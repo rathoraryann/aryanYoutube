@@ -37,7 +37,7 @@ export default function Navbar() {
           </div>
         </Link>
       </div>
-      <div className={`items-center justify-center gap-2 ${showFullWidth? "flex" : "hidden md:flex "}`}>
+      <div className={`items-center flex-grow justify-center gap-2 ${showFullWidth? "flex" : "hidden md:flex "}`}>
         {showFullWidth && (<div onClick={()=>setShowFullWidth(false)} >
         <FaArrowLeft/>
         </div>)}
@@ -47,8 +47,8 @@ export default function Navbar() {
             handleSearch();
           }}
         >
-          <div className="flex bg-zinc-900 items-center h-10 rounded-l-full rounded-r-full max-w-[600] ">
-            <div className="flex gap-4 items-center h-10 rounded-l-full max-w-[600px]">
+          <div className="flex bg-zinc-900 items-center h-10 rounded-l-full rounded-r-full max-w-[600] flex-grow justify-center">
+            <div className="flex gap-4 items-center h-10 rounded-l-full max-w-[600px] flex-grow justify-center">
               <div className="rounded-l-full flex items-center justify-center w-10">
                 <AiOutlineSearch className="text-2xl pl-1" />
               </div>
