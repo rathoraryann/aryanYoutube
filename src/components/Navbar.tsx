@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <div className="flex justify-between items-center  px-5 h-14 bg-[#212121] opacity-95 sticky top-0 z-50">
-      <div className={`gap-5 items-center text-2xl ${showFullWidth? "hidden" : "flex"} `}>
+      <div className={`gap-5 items-center text-2xl ${showFullWidth? "hidden" : "flex h-8 md:h-7"} `}>
         <Button variant="dark" size="icon">
           <GiHamburgerMenu />
         </Button>
@@ -79,14 +79,14 @@ export default function Navbar() {
       <div className={`flex gap-5 items-center text-xl ${showFullWidth? "hidden" : "flex"}`}>
         <AiOutlineSearch className="md:hidden flex" onClick={()=>setShowFullWidth(true)}/>
         <TiMicrophone className="md:hidden flex"/>
-        <BsCameraVideo />
+        <BsCameraVideo className="hidden md:flex"/>
         <div className="relative">
-          <BsBell />
+          <BsBell className="hidden md:flex"/>
           <span className="absolute bottom-2 left-2 text-xs bg-red-600 rounded-full px-1">
             9+
           </span>
         </div>
-        <div className="w-8 h-8 bg-white rounded-full"></div>
+        <div className="w-7 h-7 bg-white rounded-full"></div>
       </div>
     </div>
   );
