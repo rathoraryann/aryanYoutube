@@ -15,44 +15,47 @@ function Home() {
 
 
     const dispatch = useAppDispatch();
-    const videos = useAppSelector((state)=>state.youtubeApp.videos)
+    const videos = useAppSelector((state) => state.youtubeApp.videos)
 
 
-    useEffect (()=>{
-        return () =>{
+    useEffect(() => {
+        return () => {
             dispatch(clearVideos())
         }
     }, [dispatch])
 
-    useEffect(()=>{
-        dispatch(getHomePageVideos(false));        
-    },[dispatch])
+    useEffect(() => {
+        dispatch(getHomePageVideos(false));
+    }, [dispatch])
 
     return (
         <div className="max-h-screen overflow-hidden">
-            <div style={{height: "7.5vh"}}>
+            <div style={{ height: "7.5vh" }}>
                 <Navbar />
             </div>
-                <div className="flex" style={{height: "92.5vh"}}>
+            <div className="flex" style={{ height: "92.5vh" }}>
+                <div className="hidden md:flex">
                     <Sidebar />
-                    <div className="w-full">
+                </div>
+
+                <div className="w-full">
                     {videos.length ? (
-                    <InfiniteScroll 
-                        dataLength={videos.length}
-                        next={()=> dispatch(getHomePageVideos(true))}
-                        hasMore={videos.length <500}
-                        loader={<Spinner/>}
-                        height={`100vh`}
-                    >
-                        <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
-                            {videos.map((item:HomePageVideos)=>{
-                                return <Card data={item} key={item.videoId}/>
-                            })}
-                        </div>
-                    </InfiniteScroll>):(<Spinner />)}
-                    </div>
+                        <InfiniteScroll
+                            dataLength={videos.length}
+                            next={() => dispatch(getHomePageVideos(true))}
+                            hasMore={videos.length < 500}
+                            loader={<Spinner />}
+                            height={`100vh`}
+                        >
+                            <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
+                                {videos.map((item: HomePageVideos) => {
+                                    return <Card data={item} key={item.videoId} />
+                                })}
+                            </div>
+                        </InfiniteScroll>) : (<Spinner />)}
                 </div>
             </div>
+        </div>
     )
 }
 
