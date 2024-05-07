@@ -27,9 +27,9 @@ export default function Navbar() {
   return (
     <div className="flex justify-between items-center  px-5 h-14 bg-[#212121] opacity-95 sticky top-0 z-50">
       <div className={`gap-5 items-center text-2xl ${showFullWidth? "hidden" : "flex h-8 md:h-7"} `}>
-        <Button variant="dark" size="icon">
+      <div className="hidden md:flex"><Button variant="dark" size="icon">
           <GiHamburgerMenu />
-        </Button>
+        </Button></div>
         <Link to="/">
           <div className="flex gap-1 items-center justify-center">
             <BsYoutube className="text-3xl text-red-600" />

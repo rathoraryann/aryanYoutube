@@ -41,14 +41,16 @@ function Watch() {
             <div className="flex flex-col md:flex-row md:p-7 md:mx-20 w-full md:overflow-auto overflow-x-hidden">
               <div style={{ maxWidth: "800px" }}>
                 <div>
-                  <iframe src={`https://www.youtube.com/embed/${id}?autoplay=1`}
-                    // frameborder="0"
-                    width="100%"
-                    height="100%"
-                    allowFullScreen
-                    title="Youtube video player"
-                    
-                  ></iframe>
+                  <div className="w-full h-96">
+                    <iframe src={`https://www.youtube.com/embed/${id}?autoplay=1`}
+                      // frameborder="0"
+                      width="100%"
+                      height="100%"
+                      allowFullScreen
+                      title="Youtube video player"
+
+                    ></iframe>
+                  </div>
                   <div className="mt-5">
                     <p className="text-xl">{currentPlaying.videoTitle}</p>
                     <div className="flex justify-between mt-1">
