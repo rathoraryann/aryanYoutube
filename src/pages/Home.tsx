@@ -49,7 +49,7 @@ function Home() {
                         >
                             <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
                                 {videos.map((item: HomePageVideos) => {
-                                    return <Card data={item} key={item.videoId} />
+                                    return <div className=""><Card data={item} key={item.videoId} /></div>
                                 })}
                             </div>
                         </InfiniteScroll>) : (<Spinner />)}

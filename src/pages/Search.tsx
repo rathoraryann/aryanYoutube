@@ -46,9 +46,9 @@ function Search() {
                             loader={<Spinner />}
                             height={`100vh`}
                         >
-                            <div className="my-5">
+                            <div className="">
                                 {videos.map((item: HomePageVideos) => {
-                                    return <SearchCard data={item} key={item.videoId} />
+                                    return <div className="mb-3"><SearchCard data={item} key={item.videoId} /></div>
                                 })}
                             </div>
                         </InfiniteScroll>
