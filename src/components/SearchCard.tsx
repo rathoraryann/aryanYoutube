@@ -20,7 +20,7 @@ export default function SearchCard({ data }: { data: HomePageVideos }) {
 
 
     </div>
-    <div className="flex md:flex-col gap-3 md:w-[62%]  mt-2">
+    <div className="flex md:flex-col gap-3 md:w-[62%]  mt-2 overflow-hidden h-full">
 					<div className='flex md:hidden min-w-fit'>
 						<a href="#">
 							<img
@@ -31,7 +31,7 @@ export default function SearchCard({ data }: { data: HomePageVideos }) {
 						</a>
 					</div>
 					<div className='flex flex-col '>
-						<h3 className='text-lg '>
+						<h3 >
 							<a href="" className="line-clamp-2 ">
 								{data.videoTitle}
 							</a>
@@ -65,7 +65,6 @@ export default function SearchCard({ data }: { data: HomePageVideos }) {
 							</a>
 						</div>
 					</div>
-
 					<div className=" hidden md:flex max-w-2xl line-clamp-2 text-sm text-gray-400">
 						<p>{data.videoDescription}</p>
 					</div>
