@@ -35,7 +35,7 @@ function Search() {
             </div>
             <div className="flex" style={{ height: "92.5vh" }}>
                 <div className="hidden md:flex">
-                <Sidebar />
+                    <Sidebar />
                 </div>
                 {videos.length ? (
                     <div className="flex flex-col gap-5 w-full">
@@ -46,10 +46,10 @@ function Search() {
                             loader={<Spinner />}
                             height={`100vh`}
                         >
-                            <div className="">
-                                {videos.map((item: HomePageVideos) => {
-                                    return <div className="mb-3"><SearchCard data={item} key={item.videoId} /></div>
-                                })}
+                            <div>
+                            {videos.map((item: HomePageVideos) => {
+                                return <div className="my-5"><SearchCard data={item} key={item.videoId} /></div>                                
+                            })}
                             </div>
                         </InfiniteScroll>
                     </div>

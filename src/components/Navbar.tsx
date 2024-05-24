@@ -82,7 +82,7 @@ export default function Navbar() {
         <BsCameraVideo className="hidden md:flex"/>
         <div className="relative">
           <BsBell className="hidden md:flex"/>
-          <span className="absolute bottom-2 left-2 text-xs bg-red-600 rounded-full px-1">
+          <span className="md:flex absolute bottom-2 left-2 text-xs bg-red-600 rounded-full px-1 hidden">
             9+
           </span>
         </div>
