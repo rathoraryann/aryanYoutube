@@ -8,7 +8,7 @@ export default function SearchCard({ data }: { data: HomePageVideos }) {
         <Link to={`/watch/${data.videoId}`}>
           <img
             src={data.videoThumbnail}
-            className="md:h-44 h-40 md:w-96 w-full"
+            className="md:h-44 h-40 md:w-96 w-full rounded-lg"
             alt="thumbnail"
           />
         </Link>
@@ -21,7 +21,7 @@ export default function SearchCard({ data }: { data: HomePageVideos }) {
 
     </div>
     <div className="flex md:flex-col gap-3 md:w-[62%]  mt-2 overflow-hidden h-full">
-					<div className='flex md:hidden min-w-fit'>
+					<div className='flex md:hidden min-w-fit '>
 						<a href="#">
 							<img
 								src={data.channelInfo.image}

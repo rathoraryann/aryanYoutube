@@ -37,11 +37,11 @@ function Watch() {
           <div style={{ height: "7.5vh" }}>
             <Navbar />
           </div>
-          <div className="flex w-full" style={{ height: "92.5vh" }}>
+          <div className="flex w-full px-3" style={{ height: "92.5vh" }}>
             <div className="flex flex-col md:flex-row md:p-7 md:mx-20 w-full md:overflow-auto overflow-x-hidden">
               <div style={{ maxWidth: "800px" }}>
                 <div>
-                  <div className="w-full h-96">
+                  <div className="w-full h-80">
                     <iframe src={`https://www.youtube.com/embed/${id}?autoplay=1`}
                       // frameborder="0"
                       width="100%"
