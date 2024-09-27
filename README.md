@@ -1,34 +1,29 @@
-<<<<<<< HEAD
-# aryanYoutube
-=======
-# React + TypeScript + Vite
+# Youtube - Youtube | Web app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+An application that replicates the core features of the Youtube. Users can search videoes and can watch what they want
 
-Currently, two official plugins are available:
+## Live Website
+You can view the web app here:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Website Link**: [Youtube](https://aryanyoutubeproject.netlify.app/)
 
-## Expanding the ESLint configuration
+## Home Page
+![Youtube Home page](https://github.com/rathoraryann/aryanYoutube/blob/main/images/Home.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Watch Page
+![Youtube Watch page](https://github.com/rathoraryann/aryanYoutube/blob/main/images/Watch.png)
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Search Page
+![Youtube Watch page](https://github.com/rathoraryann/aryanYoutube/blob/main/images/Search.png)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
->>>>>>> 0312769 (ApiFetchProblem)
+
+## Features
+  - User can watch any video, he can search the content.
+
+## Technologies Used
+
+- **Frontend** : React, ReduxToolkit, TailwindCSS
+- **API** : Google Youtube API V3
+- **Deployment** : Netlify
